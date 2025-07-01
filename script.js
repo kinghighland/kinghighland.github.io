@@ -117,11 +117,39 @@ function typeWriter(element, text, speed = 100) {
     }, speed);
 }
 
+function typeWriterHTML(element, html, speed = 100) {
+    element.innerHTML = '';
+    let i = 0;
+    let isTag = false;
+    let temp = '';
+    function type() {
+        if (i < html.length) {
+            let char = html[i];
+            temp += char;
+            if (char === '<') isTag = true;
+            if (char === '>') isTag = false;
+            if (!isTag) {
+                element.innerHTML = temp;
+                setTimeout(type, speed);
+            } else {
+                type();
+            }
+            i++;
+        }
+    }
+    type();
+}
+
 // 页面加载完成后启动打字机效果
 window.addEventListener('load', () => {
+//    const heroTitle = document.querySelector('.hero h1');
+//    if (heroTitle) {
+//        const originalText = heroTitle.innerHTML;
+//        typeWriter(heroTitle, originalText, 80);
+//    }
     const heroTitle = document.querySelector('.hero h1');
     if (heroTitle) {
         const originalText = heroTitle.innerHTML;
-        typeWriter(heroTitle, originalText, 80);
+        typeWriterHTML(heroTitle, originalText, 80);
     }
 });
