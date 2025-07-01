@@ -103,7 +103,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 打字机效果
+// 打字机效果（只针对纯文本）
 function typeWriter(element, text, speed = 100) {
     element.innerHTML = '';
     let i = 0;
@@ -117,48 +117,11 @@ function typeWriter(element, text, speed = 100) {
     }, speed);
 }
 
-function typeWriterHTML(element, html, speed = 100) {
-    element.innerHTML = '';
-    let i = 0;
-    let temp = '';
-    let isTag = false;
-
-    function type() {
-        if (i < html.length) {
-            let char = html[i];
-            temp += char;
-            if (char === '<') isTag = true;
-            if (char === '>') isTag = false;
-
-            // 只有在不是标签内容时才延时显示
-            if (!isTag) {
-                element.innerHTML = temp;
-                i++;
-                setTimeout(type, speed);
-            } else {
-                // 标签内容直接累加，不延时
-                i++;
-                type();
-            }
-        } else {
-            element.innerHTML = temp; // 最后补全
-        }
-    }
-    type();
-}
-
 // 页面加载完成后启动打字机效果
-// window.addEventListener('load', () => {
-//    const heroTitle = document.querySelector('.hero h1');
-//    if (heroTitle) {
-//        const originalText = heroTitle.innerHTML;
-//        typeWriter(heroTitle, originalText, 80);
-//    }
-//});
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        typeWriterHTML(heroTitle, originalText, 80);
+    const typewriter = document.getElementById('typewriter-text');
+    if (typewriter) {
+        const originalText = typewriter.textContent; // 只取纯文本
+        typeWriter(typewriter, originalText, 80);
     }
 });
