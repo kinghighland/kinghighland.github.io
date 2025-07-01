@@ -33,12 +33,12 @@
             <div class="hero-text">
                 <h1>
                     <span id="typewriter-text">Hi, 我是 </span>
-                    <span class="highlight">King Highland</span>
+                    <span class="highlight">兰海</span>
                 </h1>
                 <p class="hero-description">一名热爱技术的开发者，专注于创建有价值的产品和分享技术见解</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">查看作品</a>
-                    <a href="files/cv.pdf" class="btn btn-secondary" target="_blank">下载简历</a>
+                    <a href="files/LANHAI-CV-CHN-202506.pdf" class="btn btn-secondary" target="_blank">下载简历</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -247,7 +247,9 @@
                     <h4>联系方式</h4>
                     <div class="social-links">
                         <a href="https://github.com/kinghighland" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="wechat: DeepOceanLAN" target="_blank"><i class="fab fa-weixin"></i></a>
+                        <a href="javascript:void(0);" onclick="showWeChatQR();" title="微信扫码加好友">
+                            <i class="fab fa-weixin"></i>
+                        </a>
                         <a href="mailto: kinghighland@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
@@ -258,6 +260,20 @@
         </div>
     </footer>
 
+    <!-- 隐藏的二维码弹窗 -->
+    <div id="wechat-qr-modal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+        <div style="background:#fff; padding:20px; border-radius:8px; text-align:center;">
+            <img src="images/wechat-qr.jpg" alt="微信二维码" style="width:200px;">
+            <p>微信扫码加好友</p>
+            <button onclick="document.getElementById('wechat-qr-modal').style.display='none';">关闭</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+    function showWeChatQR() {
+        document.getElementById('wechat-qr-modal').style.display = 'flex';
+    }
+    </script>
 </body>
 </html>
