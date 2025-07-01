@@ -3,407 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页 - 兰海</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.5s forwards;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.7s forwards;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.9s forwards;
-        }
-
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .section:nth-child(even) {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-            color: white;
-        }
-
-        .about-img {
-            text-align: center;
-        }
-
-        .avatar {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            margin: 0 auto;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            color: white;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card h3 {
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-img {
-            height: 200px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            color: white;
-        }
-
-        .project-content h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: white;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #5a6fd8;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            display: inline-block;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.2);
-            text-align: center;
-            padding: 2rem 0;
-            color: white;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .avatar {
-                width: 200px;
-                height: 200px;
-            }
-        }
-    </style>
+    <title>King Highland - 个人主页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Ocean's homepage</div>
-        </nav>
-    </header>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">King Highland</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">作品展示</a></li>
+                <li class="nav-item"><a href="#current" class="nav-link">当前项目</a></li>
+                <li class="nav-item"><a href="#articles" class="nav-link">公众号文章</a></li>
+                <li class="nav-item"><a href="#cv" class="nav-link">我的简历</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
+    <!-- 首页介绍 -->
     <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, 我是 <span class="highlight">King Highland</span></h1>
+                <p class="hero-description">一名热爱技术的开发者，专注于创建有价值的产品和分享技术见解</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">查看作品</a>
+                    <a href="files/cv.pdf" class="btn btn-secondary" target="_blank">下载简历</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/avatar.jpg" alt="King Highland" class="avatar">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section id="projects" class="section">
         <div class="container">
-            <div class="hero-content">
-                <h1>你好，我是 flowshark</h1>
-                <p>一个热爱新技术的开发者，专注于创造有价值的产品</p>
+            <h2 class="section-title">作品展示</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/flowshark.png" alt="项目1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>云流鲨 - 信令分析神器，Flowshark</h3>
+                        <p>流鲨是一款分析 PCAP 格式原始信令的工具，适用于分析 VoLTE/VoNR 呼叫失败原因。软件发布于2016年，中国移动当年商用 VoLTE 业务，流鲨的年度下载量超过了13000次，用户群包括了来自三大运营商、五大设备商、各省研究院和设计院，以及上百家三方优化服务公司的工程师。2021年流鲨改版为 SaaS 版改名为云流鲨，2025年一月云流鲨下线停止服务。</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/deepocean.png" alt="项目2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>深海 - 信令监测系统, DeepOcean</h3>
+                        <p>DeepOcean是一款信令监测系统。2005年在摩托罗拉开始研发并商用，2011年由诺基亚接手继续运营，项目年营收最高时达到几个亿，广泛应用于诺基亚在中国各省的原厂技术服务项目中。</p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 可以继续添加更多项目 -->
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
+    <!-- 正在进行的项目 -->
+    <section id="current" class="section bg-light">
         <div class="container">
-            <h2>关于我</h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <div class="avatar">👨‍💻</div>
+            <h2 class="section-title">正在进行的项目</h2>
+            <div class="current-projects">
+                <div class="current-item">
+                    <div class="current-header">
+                        <h3>信令分析智能体</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65%</span>
+                    </div>
+                    <p>该项目是基于大模型和知识库的信令分析智能体，通过大模型调用 MCP 工具分析 PCAP 格式的原始信令，获取呼叫过程，然后与本地的案例知识库做比较，找到最相似的参考案例，最终输出呼叫失败的原因。</p>
+                    <div class="current-meta">
+                        <span class="meta-item"><i class="fas fa-calendar"></i> 开始时间: 2025-06-01</span>
+                        <span class="meta-item"><i class="fas fa-target"></i> 预计完成: 2025-??-??</span>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <p>教育：上海交通大学，北京邮电大学</p>
-                    <p>职业：在多家500强企业历任高级程序员/网络工程师/系统架构师/产品总监等职位</p>
+
+                <div class="current-item">
+                    <div class="current-header">
+                        <h3>信令分析大模型</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%"></div>
+                        </div>
+                        <span class="progress-text">30%</span>
+                    </div>
+                    <p>该项目通过对千问 Qwen3-8B-Instruct 大模型进行 Fine-Tuning 微调训练，得到一个可以通过对话方式，根据信令呼叫过程给出呼叫失败原因的大模型。</p>
+                    <div class="current-meta">
+                        <span class="meta-item"><i class="fas fa-calendar"></i> 开始时间: 2025-06-18</span>
+                        <span class="meta-item"><i class="fas fa-target"></i> 预计完成: 2025-??-??</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- 公众号文章 -->
+    <section id="articles" class="section">
         <div class="container">
-            <p>&copy; 2025 flowsharker. 保留所有权利.</p>
+            <h2 class="section-title">公众号文章</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-date">2025-06-30</div>
+                    <h3 class="article-title">《我的炼丹笔记 #3》信令诊断大模型训练完成</h3>
+                    <p class="article-excerpt">经过十余天的不懈努力，终于完成了针对信令诊断的模型微调训练。此次微调使用了 Qwen3-8B-Instruct 模型，训练数据集源自云流鲨案例库</p>
+                    <a href="https://mp.weixin.qq.com/s/MIA77CzRRXN-3sCbadbkLw" class="article-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-date">2025-06-13</div>
+                    <h3 class="article-title">从十几分钟到几秒：深海流鲨智能体，经验总结有干货</h3>
+                    <p class="article-excerpt">『深海 · 流鲨智能体』的实现、优化与总结</p>
+                    <a href="https://mp.weixin.qq.com/s/4v9irRpkypRRdJvns8hB1w" class="article-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-date">2025-05-28</div>
+                    <h3 class="article-title">IMA 知识库，智能化信令归因判障的新范式</h3>
+                    <p class="article-excerpt">使用 IMA 加入流鲨案例库（加入方法戳这里），就可以通过提问来分析信令，进而判断呼叫失败的原因。由于 IMA 无法直接查看真实的 pcap 信令，其回答是基于案例库匹配得出的。这种语义匹配方式正是大语言模型的专长，但前提是案例描述和提问内容都足够准确、完整。</p>
+                    <a href="https://mp.weixin.qq.com/s/7qq9GIWEGunHJ4mCQ4bdCg" class="article-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="article-card">
+                    <div class="article-date">2025-04-17</div>
+                    <h3 class="article-title">1分钟搞定，以后再查3GPP规范，可以直接问它了</h3>
+                    <p class="article-excerpt">使用腾讯 IMA 制作的 3GPP-R18 知识库，有了它，任何人都可以随时随地跟规范直接对话提问了。</p>
+                    <a href="https://mp.weixin.qq.com/s/-EfDXGbic-zirj0WzKq2fA" class="article-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-date">2023-05-15</div>
+                    <h3 class="article-title">deepseek+mcp+本地知识库+系统提示词, 读取Pcap生成呼叫流程图和诊断报告</h3>
+                    <p class="article-excerpt">完整介绍了方案实现，包括运行环境、使用的各组件版本、系统提示词、实际运行效果等。</p>
+                    <a href="https://mp.weixin.qq.com/s/ynnh9ypJSpcJc92cIXtjnQ" class="article-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-date">2023-04-09</div>
+                    <h3 class="article-title">“您拨打的电话正在通话中” 我信你个鬼！</h3>
+                    <p class="article-excerpt">听到 “您拨打的电话正在通话中”时，大家都能判断是真占线、还是对方现在不方便或不愿意接。当看信令时遇到 “486 User Busy“，情况要复杂得多，这时候被叫除了可能正在通话中，还可能正在自动屏蔽中、手工置忙中、摘机后悔中、正在起呼中、正在注销中、甚至是自己占了自己的线！今天咱就针对这几种情况拿真实码流做个展示。</p>
+                    <a href="https://mp.weixin.qq.com/s/FBv78UsJlZLEnMklWHzWOA" class="article-link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+            <div class="articles-more">
+                <a href="#" class="btn btn-outline">查看更多文章，关注『深海 · 流鲨』微信公众号</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 简历部分 -->
+    <section id="cv" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">个人简历</h2>
+            <div class="cv-content">
+                <div class="cv-preview">
+                    <div class="cv-info">
+                        <h3>个人信息</h3>
+                        <ul>
+                            <li><strong>姓名:</strong> LAN HAI (KingHighland)</li>
+                            <li><strong>职位:</strong> 资深产品经理/高级程序员/通信网信令专家</li>
+                            <li><strong>邮箱:</strong> kinghighland@gmail.com</li>
+                            <li><strong>GitHub:</strong> github.com/kinghighland</li>
+                        </ul>
+                    </div>
+                    <div class="cv-skills">
+                        <h3>技能专长</h3>
+                        <div class="skills-list">
+                            <span class="skill">产品管理</span>
+                            <span class="skill">2G/3G/4G/5G/IMS</span>
+                            <span class="skill">AI/LLaMA-Factory/Llama.cpp</span>
+                            <span class="skill">Ollama//LM Studio/Cherry Studio</span>
+                            <span class="skill">Python/Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cv-download">
+                    <p>想了解更多详细信息？</p>
+                    <a href="files/LANHAI-CV-CHN-202506.pdf" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-download"></i> 下载完整简历
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>King Highland</h3>
+                    <p>一名热爱技术的开发者</p>
+                </div>
+                <div class="footer-links">
+                    <h4>联系方式</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 King Highland. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // 表单提交处理
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('感谢您的留言！我会尽快回复您。');
-            this.reset();
-        });
-
-        // 滚动动画
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // 观察需要动画的元素
-        document.querySelectorAll('.skill-card, .project-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
