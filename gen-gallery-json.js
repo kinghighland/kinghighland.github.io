@@ -13,18 +13,28 @@ const isImage = f => /\.(png|jpe?g|gif)$/i.test(f);
 const demoFolders = fs.readdirSync(demosRoot)
     .filter(f => fs.statSync(path.join(demosRoot, f)).isDirectory());
 
-// 生成 JSON 结构
 const demos = demoFolders.map(folder => {
     const images = fs.readdirSync(path.join(demosRoot, folder))
         .filter(isImage)
-        .sort();
+        .sort((a, b) => {
+            const aMatch = a.match(/^\d+/);
+            const bMatch = b.match(/^\d+/);
+            if (aMatch && bMatch) {
+                const aNum = parseInt(aMatch[0], 10);
+                const bNum = parseInt(bMatch[0], 10);
+                if (aNum !== bNum) return aNum - bNum;
+                return a.localeCompare(b);
+            }
+            if (aMatch) return -1;
+            if (bMatch) return 1;
+            return a.localeCompare(b);
+        });
     return {
-        name: folder,    // 可以也做个美化映射
+        name: folder,
         folder: folder,
         images: images
     };
 });
-
 const data = { demos };
 
 // 写入 JSON 文件

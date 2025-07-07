@@ -19,6 +19,14 @@
       "folder": "Case-1529 Dropcall, CF from IBCF",
       "images": [
         "1.invite.png",
+        "2.180 ringback from IBCF.png",
+        "3-181 forward after 20s timeout.png",
+        "4.invite to local network.png",
+        "5.180 ringback from local network.png",
+        "6.update.png",
+        "7.200OK offhook.png",
+        "8.ACK.png",
+        "9.update to IBCF.png",
         "10.reINVITE to IBCF.png",
         "11.png",
         "12.reINVITE to MT.png",
@@ -29,18 +37,10 @@
         "17.update to MO.png",
         "18.png",
         "19.reINVITE from IBCF.png",
-        "2.180 ringback from IBCF.png",
         "20.reINVITE to MT.png",
         "21.DROP, IBCF send BYEs.png",
         "22.png",
-        "23.BYE arrived at UEs.png",
-        "3-181 forward after 20s timeout.png",
-        "4.invite to local network.png",
-        "5.180 ringback from local network.png",
-        "6.update.png",
-        "7.200OK offhook.png",
-        "8.ACK.png",
-        "9.update to IBCF.png"
+        "23.BYE arrived at UEs.png"
       ]
     },
     {
@@ -48,6 +48,14 @@
       "folder": "Case0000 VoNR calls CSFB",
       "images": [
         "1.INVITE.png",
+        "2.png",
+        "3.png",
+        "4.183.png",
+        "5.PRACK.png",
+        "6.png",
+        "7.200OK.png",
+        "8.UPDATE.png",
+        "9.CS Service Notification.png",
         "10.ESR CSFB, 180 Ringing.png",
         "11,UPDATE(sendonly) Customized Alerting Tone.png",
         "12.200OK.png",
@@ -58,7 +66,6 @@
         "17.200OK(invite) offhook.png",
         "18.UPDATE(closed).png",
         "19.200OK(update).png",
-        "2.png",
         "20.200OK(invite) offhook repetition.png",
         "21.200OK+ACK.png",
         "22.Handover triggered.png",
@@ -67,14 +74,7 @@
         "25.png",
         "26.onhook.png",
         "27.png",
-        "28.TAU back to 4G.png",
-        "3.png",
-        "4.183.png",
-        "5.PRACK.png",
-        "6.png",
-        "7.200OK.png",
-        "8.UPDATE.png",
-        "9.CS Service Notification.png"
+        "28.TAU back to 4G.png"
       ]
     },
     {
@@ -105,7 +105,6 @@
       "folder": "Case0051 CS calls VoLTE",
       "images": [
         "1.CS call setup, invite.png",
-        "10.MO CANCEL.png",
         "2.invite.png",
         "3.183 and resource reservation.png",
         "4.PRACK.png",
@@ -113,7 +112,8 @@
         "6.MT 200OK offhook.png",
         "7.MT 200OK repetition.png",
         "8.MT 503 DROP.png",
-        "9.MT 200OK(bye).png"
+        "9.MT 200OK(bye).png",
+        "10.MO CANCEL.png"
       ]
     },
     {
@@ -140,14 +140,6 @@
       "folder": "Case0604 VoLTE calls CS",
       "images": [
         "1.invite.png",
-        "10.183.png",
-        "11.UPDATE(SDP).png",
-        "12.200OK(update).png",
-        "13.183(PEM) No user responding.png",
-        "14.183(PEM), PRACK.png",
-        "15.200OK(prack).png",
-        "16.CANCEL.png",
-        "17.ACK.png",
         "2.LIR.png",
         "3.183.png",
         "4.PRACK.png",
@@ -155,7 +147,15 @@
         "6.UPDATE.png",
         "7.200OK, IAM.png",
         "8.REL(CC03).png",
-        "9.CF181, invite.png"
+        "9.CF181, invite.png",
+        "10.183.png",
+        "11.UPDATE(SDP).png",
+        "12.200OK(update).png",
+        "13.183(PEM) No user responding.png",
+        "14.183(PEM), PRACK.png",
+        "15.200OK(prack).png",
+        "16.CANCEL.png",
+        "17.ACK.png"
       ]
     },
     {
@@ -242,6 +242,14 @@
       "folder": "Case1048 VoLTE calls VoNR",
       "images": [
         "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "5.png",
+        "6.png",
+        "7.png",
+        "8.png",
+        "9.png",
         "10.png",
         "11.png",
         "12.png",
@@ -252,16 +260,8 @@
         "17.png",
         "18.png",
         "19.DROP, RTP Timeout at UE.png",
-        "2.png",
         "20.png",
-        "21.ASR.png",
-        "3.png",
-        "4.png",
-        "5.png",
-        "6.png",
-        "7.png",
-        "8.png",
-        "9.png"
+        "21.ASR.png"
       ]
     },
     {
@@ -279,7 +279,6 @@
       "folder": "Case1189 two concurrent INVITEs",
       "images": [
         "1.two concurrent INVITEs due to poor RF quality in uplink.png",
-        "10.normal release.png",
         "2.cancel and PDU resource assignment.png",
         "3.png",
         "4.cancel succeed.png",
@@ -287,7 +286,8 @@
         "6.183.png",
         "7.update.png",
         "8.update(PEM) CAT.png",
-        "9.offhook.png"
+        "9.offhook.png",
+        "10.normal release.png"
       ]
     },
     {
@@ -295,13 +295,6 @@
       "folder": "Case1446 I-RAT Oscillation",
       "images": [
         "1.png",
-        "10.png",
-        "11.png",
-        "12.png",
-        "13.png",
-        "14.png",
-        "15.png",
-        "16.png",
         "2.png",
         "3.png",
         "4.png",
@@ -309,7 +302,14 @@
         "6.png",
         "7.png",
         "8.png",
-        "9.png"
+        "9.png",
+        "10.png",
+        "11.png",
+        "12.png",
+        "13.png",
+        "14.png",
+        "15.png",
+        "16.png"
       ]
     },
     {
@@ -317,8 +317,6 @@
       "folder": "Case1703 Dropcall (HSS Based PCSCF-Restoration)",
       "images": [
         "1.INVITE.png",
-        "10.ACK.png",
-        "11.Drop due to IDR.png",
         "2.LIR.png",
         "3.183.png",
         "4.183.png",
@@ -326,7 +324,9 @@
         "6.200OK.png",
         "7.180 Ringback.png",
         "8.UPDATE(PEM) CAT.png",
-        "9.200OK offhook.png"
+        "9.200OK offhook.png",
+        "10.ACK.png",
+        "11.Drop due to IDR.png"
       ]
     },
     {
@@ -348,7 +348,6 @@
       "folder": "Case1718 Mobile Number Portability (incomming call while dialing out)",
       "images": [
         "1.invite and invite.png",
-        "10.MO side RTP timeout, MT side hangup.png",
         "2.486.png",
         "3.183 and 183(pem).png",
         "4.prack.png",
@@ -356,7 +355,8 @@
         "6.180 and cancel.png",
         "7.CF 181, offhook.png",
         "8.200OK, ACK.png",
-        "9.half-connected when reINVITE due to no ACK received.png"
+        "9.half-connected when reINVITE due to no ACK received.png",
+        "10.MO side RTP timeout, MT side hangup.png"
       ]
     }
   ]
