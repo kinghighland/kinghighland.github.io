@@ -1,0 +1,24 @@
+{
+  "name": "kinghighland.github.io",
+  "version": "1.0.0",
+  "description": "一个展示个人技术作品和专业背景的响应式个人主页网站。",
+  "main": "gallery-list.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinghighland/kinghighland.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kinghighland/kinghighland.github.io/issues"
+  },
+  "homepage": "https://github.com/kinghighland/kinghighland.github.io#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

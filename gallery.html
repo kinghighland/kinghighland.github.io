@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title>软件演示图集 Demo Gallery</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background: #f9f9fa; margin: 0;}
+    .container {
+      max-width: 1280px;   /* 原为 920px，可适当放大 */
+      margin: 30px auto 40px;
+      padding: 24px 18px;
+      background: #fff;
+      box-shadow: 0 0 12px #ddd4;
+      border-radius: 10px;
+    }
+    .nav-link { margin-bottom: 18px; display: inline-block; font-size: 16px; color: #3273dc; text-decoration: none;}
+    h1 { margin-bottom: 8px;}
+    .demo-selector { display: flex; flex-wrap: wrap; gap: 1em; margin-bottom: 34px;}
+    .demo-option { padding: 3px 10px; border: 1px solid #ddd; border-radius: 5px; background: #f3f6fb; cursor: pointer;}
+    .demo-option.selected { background: #3273dc; color: #fff; border-color: #295b99;}   
+    .gallery-img {
+      width: 100%;
+      max-width: 1200px;    /* 增大这里 */
+      border: 1px solid #eee;
+      border-radius: 4px;
+      box-shadow: 0 1px 8px #eee;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .img-caption { margin-bottom: 20px; font-size: 15px; color: #666; text-align: left; padding-left: 4px;}
+    @media (max-width: 700px) {
+      .container { max-width: 98vw; padding: 8px }
+      .gallery-img { max-width: 100vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="nav-link" href="index.html#works">&lt; 返回作品展示</a>
+    <h1>软件演示图集 Demo Gallery</h1>
+    <div class="demo-selector" id="demoSelector"></div>
+    <div id="gallery"></div>
+  </div>
+  <div id="imgModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#333b;align-items:center;justify-content:center;z-index:9999;">
+    <img id="modalImg" style="max-width:98vw;max-height:98vh;box-shadow:0 4px 24px #000b;border-radius:4px;">
+  </div>
+  <script>
+    let currentIdx = 0;
+    let demoData = [];
+
+    function renderSelector() {
+      const selector = document.getElementById('demoSelector');
+      selector.innerHTML = '';
+      if (!demoData || demoData.length === 0) {
+        selector.innerHTML = '<span style="color:#999">没有找到任何演示案例！</span>';
+        return;
+      }
+      demoData.forEach((demo, idx) => {
+        let btn = document.createElement('div');
+        btn.className = 'demo-option' + (idx === currentIdx ? ' selected' : '');
+        btn.innerText = demo.name;
+        btn.onclick = () => { currentIdx = idx; renderSelector(); renderGallery(); window.scrollTo(0,0);}
+        selector.appendChild(btn);
+      });
+    }
+
+    function renderGallery() {
+      const gallery = document.getElementById('gallery');
+      if (!demoData || demoData.length === 0) {
+        gallery.innerHTML = '<div style="color:#999;">未检测到任何 demo 目录或图片。</div>';
+        return;
+      }
+      const demo = demoData[currentIdx];
+      if (!demo.images || demo.images.length === 0) {
+        gallery.innerHTML = '<div style="color:#999;">该 Demo 下暂无图片。</div>';
+        return;
+      }
+      let html = '';
+      demo.images.forEach(imgName => {
+        let imgSrc = `demos/${demo.folder}/${encodeURIComponent(imgName)}`;
+        let caption = imgName.replace(/\.(png|jpg|jpeg|gif)$/i, '');
+        html += `
+          <div>
+            <img class="gallery-img" src="${imgSrc}" alt="${caption}" loading="lazy" onclick="showModal('${imgSrc}')">
+            <div class="img-caption">${caption}</div>
+          </div>
+        `;
+      });
+      gallery.innerHTML = html;
+    }
+
+    function showModal(src) {
+      document.getElementById('imgModal').style.display = 'flex';
+      document.getElementById('modalImg').src = src;
+    }
+    document.getElementById('imgModal').onclick = function() {
+      this.style.display = 'none';
+    }
+
+    // 仅改这一行即可兼容 github.io：请求 gallery.json
+    fetch('gallery.json')
+      .then(r => r.json())
+      .then(data => {
+        if(data && data.demos && data.demos.length > 0) {
+          demoData = data.demos;
+          currentIdx = 0;
+          renderSelector();
+          renderGallery();
+        } else {
+          document.getElementById('demoSelector').innerHTML = '<span style="color:#933">没有找到demo数据。</span>';
+        }
+      })
+      .catch(err => {
+        document.getElementById('demoSelector').innerHTML = '<span style="color:#a33">无法加载演示列表</span>';
+        document.getElementById('gallery').innerHTML = '<div style="color:#a33;">获取演示列表失败，请检查 gallery.json 是否存在。</div>';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
