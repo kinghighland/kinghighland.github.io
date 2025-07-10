@@ -670,3 +670,45 @@ body {
     font-size: 1.5em;
     cursor: pointer;
 }
+.language-switcher {
+    position: fixed;
+    top: 72px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-size: 14px;
+    z-index: 1000;
+  }
+  
+  .lang-link {
+    color: #3273dc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .lang-link:hover {
+    color: #1a5bb8;
+    text-decoration: underline;
+  }
+  
+  .current-lang {
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .lang-divider {
+    margin: 0 8px;
+    color: #999;
+  }
+  
+  /* 移动端适配 */
+  @media (max-width: 768px) {
+    .language-switcher {
+      top: 10px;
+      right: 10px;
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+  }

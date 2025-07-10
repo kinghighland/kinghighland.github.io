@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean LAN - 个人主页</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Ocean LAN - Homepage</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="alternate" hreflang="en" href="en/">
-    <link rel="alternate" hreflang="zh-CN" href="./">
+    <link rel="alternate" hreflang="zh-CN" href="../">
+    <link rel="alternate" hreflang="en" href="./">
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">深海 · 流鲨</div>
+            <div class="nav-logo">DEEPOCEAN · flowshark</div>
             <div class="language-switcher">
-                <span class="current-lang">中文</span>
+                <a href="../" class="lang-link">中文</a>
                 <span class="lang-divider">|</span>
-                <a href="en/" class="lang-link">English</a>
+                <span class="current-lang">English</span>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">作品展示</a></li>
-                <li class="nav-item"><a href="#current" class="nav-link">当前项目</a></li>
-                <li class="nav-item"><a href="#articles" class="nav-link">公众号文章</a></li>
-                <li class="nav-item"><a href="#cv" class="nav-link">我的简历</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link">HOME</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">PORTFOLIO</a></li>
+                <li class="nav-item"><a href="#current" class="nav-link">PROJECTS</a></li>
+                <li class="nav-item"><a href="#articles" class="nav-link">PAPERS</a></li>
+                <li class="nav-item"><a href="#cv" class="nav-link">MY CV</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -39,17 +39,17 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>
-                    <span id="typewriter-text">Hi, 我是 </span>
-                    <span class="highlight">兰海</span>
+                    <span id="typewriter-text">Hi, I am </span>
+                    <span class="highlight">LAN HAI</span>
                 </h1>
-                <p class="hero-description">一名热爱技术的开发者，专注于创建有价值的产品和分享技术见解</p>
+                <p class="hero-description">A developer passionate about technology, focused on creating valuable products and sharing technical insights.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">查看作品</a>
-                    <a href="files/LANHAI-CV-CHN-202506.pdf" class="btn btn-secondary" target="_blank">下载简历</a>
+                    <a href="#projects" class="btn btn-primary">View Portfolio</a>
+                    <a href="files/LANHAI-CV-CHN-202506.pdf" class="btn btn-secondary" target="_blank">View Resume</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/avatar.jpg" alt="King Highland" class="avatar">
+                <img src="../images/avatar.jpg" alt="King Highland" class="avatar">
             </div>
         </div>
         <div class="scroll-indicator">
@@ -60,11 +60,11 @@
     <!-- 作品展示 -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">作品展示</h2>
+            <h2 class="section-title">Portfolio</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/flowshark.png" alt="项目1">
+                        <img src="../images/flowshark.png" alt="流鲨项目">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="gallery.html" class="project-link"><i class="fab fa-github"></i></a>
@@ -73,8 +73,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>云流鲨 - 信令分析神器，Flowshark</h3>
-                        <p>流鲨是一款分析 PCAP 格式原始信令的工具，适用于分析 VoLTE/VoNR 呼叫失败原因。软件发布于2016年，中国移动当年商用 VoLTE 业务，流鲨的年度下载量超过了13000次，用户群包括了来自三大运营商、五大设备商、各省研究院和设计院，以及上百家三方优化服务公司的工程师。2021年流鲨改版为 SaaS 版改名为云流鲨，2025年一月云流鲨下线停止服务。</p>
+                        <h3>Flowshark - The Signaling Analysis Power Tool</h3>
+                        <p>Flowshark is a tool designed to analyze raw signaling in PCAP format, specifically tailored for diagnosing the causes of VoLTE/VoNR call failures. Launched in 2016, the same year that China Mobile commercialized its VoLTE service, Flowshark achieved over 13,000 annual downloads. Its user base includes engineers from the three major carriers, the five major equipment vendors, provincial research institutes and design institutes, as well as hundreds of third-party optimization service companies. In 2021, Flowshark was rebranded as CloudFlowshark and transformed into a SaaS version. CloudFlowshark ceased operations and was taken offline in January 2025.</p>
                         <div class="project-tags">
                             <span class="tag">SIP</span>
                             <span class="tag">3GPP</span>
@@ -88,7 +88,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/deepocean.png" alt="项目2">
+                        <img src="../images/deepocean.png" alt="深海项目">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fab fa-github"></i></a>
@@ -97,8 +97,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>深海 - 信令监测系统, DeepOcean</h3>
-                        <p>DeepOcean是一款信令监测系统。2005年在摩托罗拉开始研发并商用，2011年由诺基亚接手继续运营，项目年营收最高时达到几个亿，广泛应用于诺基亚在中国各省的原厂技术服务项目中。</p>
+                        <h3>DeepOcean - Signaling Monitoring System</h3>
+                        <p>DeepOcean is a signaling monitoring system that was initially developed and commercialized by Motorola in 2005. It was later taken over by Nokia in 2011 for continued operation. At its peak, the project generated annual revenues of several hundred million. It was widely used in Nokia's original factory technical service projects across various provinces in China.</p>
                         <div class="project-tags">
                             <span class="tag">SIP</span>
                             <span class="tag">3GPP</span>
@@ -119,63 +119,63 @@
     <!-- 正在进行的项目 -->
     <section id="current" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">正在进行的项目</h2>
+            <h2 class="section-title">Ongoing Projects</h2>
             <div class="current-projects">
                 <div class="current-item">
                     <div class="current-header">
-                        <h3>信令分析智能体</h3>
+                        <h3>Signaling Analysis Agent</h3>
                         <div class="progress-bar">
                             <div class="progress" style="width: 65%"></div>
                         </div>
                         <span class="progress-text">85%</span>
                     </div>
-                    <p>该项目是基于大模型和知识库的信令分析智能体，通过大模型调用 MCP 工具分析 PCAP 格式的原始信令，获取呼叫过程，然后与本地的案例知识库做比较，找到最相似的参考案例，最终输出呼叫失败的原因。</p>
+                    <p>This project is a signaling analysis agent based on large models and a knowledge base. It uses large models to call the MCP tool to analyze raw signaling in PCAP format, obtaining the call process. It then compares this with the local case knowledge base to find the most similar reference case and ultimately outputs the reason for call failure.</p>
                     <div class="current-screenshot">
-                        <img src="images/AI-agent.png" alt="信令分析智能体运行界面" style="max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);margin:10px 0;">
-                        <div style="font-size:0.95em;color:#888;text-align:center;">信令分析智能体运行界面</div>
+                        <img src="../images/AI-agent.png" alt="信令分析智能体运行界面" style="max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);margin:10px 0;">
+                        <div style="font-size:0.95em;color:#888;text-align:center;">Signaling Analysis Agent Interface</div>
                     </div>
                     <div style="text-align:center; margin-bottom:10px;">
                         <a href="https://mp.weixin.qq.com/s/W5MDUMfRkvyeNM-WO-Xizg" class="btn btn-outline" target="_blank">
-                            相关文章 <i class="fas fa-arrow-right"></i>
+                            Related Articles <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                     <div class="current-meta">
-                        <span class="meta-item"><i class="fas fa-calendar"></i> 开始时间: 2025-06-01</span>
-                        <span class="meta-item"><i class="fas fa-target"></i> 预计完成: 2025-??-??</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Start Date: 2025-06-01</span>
+                        <span class="meta-item"><i class="fas fa-target"></i> Estimated Completion: 2025-??-??</span>
                     </div>
                 </div>
 
                 <div class="current-item">
                     <div class="current-header">
-                        <h3>信令分析大模型</h3>
+                        <h3>Signaling Analysis Large Model</h3>
                         <div class="progress-bar">
                             <div class="progress" style="width: 30%"></div>
                         </div>
                         <span class="progress-text">70%</span>
                     </div>
-                    <p>该项目通过对千问 Qwen3-8B-Instruct 大模型进行 Fine-Tuning 微调训练，得到一个可以通过对话方式，根据信令呼叫过程给出呼叫失败原因的大模型。</p>
+                    <p>This project involves fine-tuning the Qwen3-8B-Instruct large model from Qianwen through a fine-tuning training process. The result is a large model that can provide the reason for call failure based on the signaling call process through a conversational interface.</p>
                     <div class="current-screenshot">
-                        <img src="images/Qwen3-8B-Instruct-deepocean.png" alt="信令分析大模型运行界面" style="max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);margin:10px 0;">
-                        <div style="font-size:0.95em;color:#888;text-align:center;">信令分析大模型运行界面</div>
+                        <img src="../images/Qwen3-8B-Instruct-deepocean.png" alt="信令分析大模型运行界面" style="max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);margin:10px 0;">
+                        <div style="font-size:0.95em;color:#888;text-align:center;">Signaling Analysis Large Model Interface</div>
                     </div>
                     <div style="text-align:center; margin-bottom:10px;">
                         <a href="https://mp.weixin.qq.com/s/MIA77CzRRXN-3sCbadbkLw" class="btn btn-outline" target="_blank">
-                            相关文章 <i class="fas fa-arrow-right"></i>
+                            Related Articles<i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                     <div class="model-links" style="text-align:center; margin-bottom:16px;">
                         <a href="https://ollama.com/flowshark/" class="btn btn-model" target="_blank" title="Ollama 模型库">
-                            <img src="images/ollama-logo.png" alt="Ollama" style="height:20px;vertical-align:middle;margin-right:6px;">
-                            Ollama 模型库
+                            <img src="../images/ollama-logo.png" alt="Ollama" style="height:20px;vertical-align:middle;margin-right:6px;">
+                            Ollama Model Library
                         </a>
                         <a href="https://huggingface.co/flowshark/" class="btn btn-model" target="_blank" title="HuggingFace 模型页" style="margin-left:12px;">
-                            <img src="images/huggingface_logo-noborder.svg" alt="HuggingFace" style="height:20px;vertical-align:middle;margin-right:6px;">
-                            HuggingFace 模型页
+                            <img src="../images/huggingface_logo-noborder.svg" alt="HuggingFace" style="height:20px;vertical-align:middle;margin-right:6px;">
+                            HuggingFace Model Page
                         </a>
                     </div>
                     <div class="current-meta">
-                        <span class="meta-item"><i class="fas fa-calendar"></i> 开始时间: 2025-06-18</span>
-                        <span class="meta-item"><i class="fas fa-target"></i> 预计完成: 2025-??-??</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Start Date: 2025-06-18</span>
+                        <span class="meta-item"><i class="fas fa-target"></i> Estimated Completion: 2025-??-??</span>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
     <!-- 公众号文章 -->
     <section id="articles" class="section">
         <div class="container">
-            <h2 class="section-title">公众号文章</h2>
+            <h2 class="section-title">WeChat Articles</h2>
             <div class="articles-grid">
                 <article class="article-card">
                     <div class="article-date">2025-06-30</div>
@@ -254,7 +254,7 @@
             </div>
             <div class="articles-more">
                 <a href="javascript:void(0);" class="btn btn-outline" onclick="showWeChatMPQR();">
-                    查看更多文章，关注『深海 · 流鲨』微信公众号
+                    View more articles by following the WeChat official account "DeepOcean · Flowshark."
                 </a>
             </div>
         </div>
@@ -263,22 +263,22 @@
     <!-- 简历部分 -->
     <section id="cv" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">个人简历</h2>
+            <h2 class="section-title">Personal Resume</h2>
             <div class="cv-content">
                 <div class="cv-preview">
                     <div class="cv-info">
-                        <h3>个人信息</h3>
+                        <h3>Personal Information</h3>
                         <ul>
-                            <li><strong>姓名:</strong> LAN HAI (Ocean LAN)</li>
-                            <li><strong>职位:</strong> 资深产品经理/高级程序员/通信网信令专家</li>
-                            <li><strong>邮箱:</strong> kinghighland@gmail.com</li>
+                            <li><strong>Name:</strong> LAN HAI (Ocean LAN)</li>
+                            <li><strong>Position:</strong> Senior Product Manager / Senior Programmer / Signaling Expert in Telecommunication Networks</li>
+                            <li><strong>Email:</strong> kinghighland@gmail.com</li>
                             <li><strong>GitHub:</strong> github.com/kinghighland</li>
                         </ul>
                     </div>
                     <div class="cv-skills">
-                        <h3>技能专长</h3>
+                        <h3>Skills and Expertise</h3>
                         <div class="skills-list">
-                            <span class="skill">产品管理</span>
+                            <span class="skill">Product Management</span>
                             <span class="skill">2G/3G/4G/5G/IMS</span>
                             <span class="skill">AI/LLaMA-Factory/Llama.cpp</span>
                             <span class="skill">Ollama//LM Studio/Cherry Studio</span>
@@ -287,9 +287,9 @@
                     </div>
                 </div>
                 <div class="cv-download">
-                    <p>想了解更多详细信息？</p>
+                    <p>Want to know more details?</p>
                     <a href="files/LANHAI-CV-CHN-202506.pdf" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-download"></i> 下载完整简历
+                        <i class="fas fa-download"></i> Download My Resume
                     </a>
                 </div>
             </div>
@@ -302,10 +302,10 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <h3>Ocean LAN</h3>
-                    <p>一名热爱技术的开发者</p>
+                    <p>A Developer Passionate About Technology</p>
                 </div>
                 <div class="footer-links">
-                    <h4>联系方式</h4>
+                    <h4>Contacts Information</h4>
                     <div class="social-links">
                         <a href="https://github.com/kinghighland" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="javascript:void(0);" onclick="showWeChatQR();" title="微信扫码加好友">
@@ -324,7 +324,7 @@
     <!-- 隐藏的二维码弹窗 -->
     <div id="wechat-qr-modal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
         <div style="background:#fff; padding:20px; border-radius:8px; text-align:center;">
-            <img src="images/wechat-qr.jpg" alt="微信二维码" style="width:200px;">
+            <img src="../images/wechat-qr.jpg" alt="微信二维码" style="width:200px;">
             <p>微信扫码加好友</p>
             <button onclick="document.getElementById('wechat-qr-modal').style.display='none';">关闭</button>
         </div>
@@ -333,14 +333,14 @@
     <!-- 微信公众号二维码弹窗 -->
     <div id="wechat-mp-qr-modal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
         <div style="background:#fff; padding:20px; border-radius:8px; text-align:center; position:relative;">
-            <img src="images/weixin-mp-dq.jpg" alt="微信公众号二维码" style="width:220px;max-width:80vw;">
+            <img src="../images/weixin-mp-dq.jpg" alt="微信公众号二维码" style="width:220px;max-width:80vw;">
             <p style="margin:10px 0 0 0; color:#333;">微信扫码关注『深海 · 流鲨』公众号</p>
             <button onclick="document.getElementById('wechat-mp-qr-modal').style.display='none';"
                 style="position:absolute;top:8px;right:8px;background:transparent;border:none;font-size:1.5em;cursor:pointer;">×</button>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
     <script>
     function showWeChatQR() {
         document.getElementById('wechat-qr-modal').style.display = 'flex';

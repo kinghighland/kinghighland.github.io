@@ -36,13 +36,13 @@
 </head>
 <body>
   <div class="container">
-    <a class="nav-link" href="index.html#works">← 返回作品展示</a>
+    <a class="nav-link" href="index.html#works">← Back to Portfolio</a> 
     <div class="language-switcher">
-      <span class="current-lang">中文</span>
+      <a href="../gallery.html" class="lang-link">中文</a>
       <span class="lang-divider">|</span>
-      <a href="en/gallery.html" class="lang-link">English</a>
+      <span class="current-lang">English</span>
     </div>
-    <h1>软件演示图集</h1>
+    <h1>Demo Gallery</h1>
     <div class="demo-selector" id="demoSelector"></div>
     <div id="gallery"></div>
   </div>
@@ -82,7 +82,7 @@
       }
       let html = '';
       demo.images.forEach(imgName => {
-        let imgSrc = `demos/${demo.folder}/${encodeURIComponent(imgName)}`;
+        let imgSrc = `../demos/${demo.folder}/${encodeURIComponent(imgName)}`;
         let caption = imgName.replace(/\.(png|jpg|jpeg|gif)$/i, '');
         html += `
           <div>
@@ -103,7 +103,7 @@
     }
 
     // 仅改这一行即可兼容 github.io：请求 gallery.json
-    fetch('gallery.json')
+    fetch('../gallery.json')
       .then(r => r.json())
       .then(data => {
         if(data && data.demos && data.demos.length > 0) {
